@@ -34,7 +34,7 @@ class LeapNode(Node):
 
         # Subscribes to a variety of sources that can command the hand
         self.create_subscription(JointState, 'cmd_leap', self._receive_pose, 10)
-        self.create_subscription(JointState, 'cmd_allegro', self._receive_allegro, 10)
+        self.create_subscription(JointState, '/leaphand_node/cmd_allegro_right', self._receive_allegro, 10)
         self.create_subscription(JointState, 'cmd_ones', self._receive_ones, 10)
 
         # Creates services that can give information about the hand out
